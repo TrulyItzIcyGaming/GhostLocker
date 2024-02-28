@@ -1,0 +1,7 @@
+
+1. vercel.json is for if you want to deploy it to vercel your self duhhhh.
+2. templates contains the HTML
+3. static contains the CSS
+4. main is the server ( uvicorn main:app --reload )
+5. requirements has the requirements i used ( pip install -r requirements.txt )
+6. ignore .vercel shit that has my password in it, oh well.
