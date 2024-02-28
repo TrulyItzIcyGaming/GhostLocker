@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GhostLock</title>
+    <link rel="stylesheet" type="text/css" href="/static/styles.css">
+</head>
+<body class="dark-mode">
+    <div class="main-container">
+        <div class="container">
+            <h1>GhostLock</h1>
+            <form action="/encrypt" method="post" class="form">
+                <h2 class="section-heading">Encrypt</h2>
+                <label for="message">Message:</label><br>
+                <input type="text" id="message" name="message" class="input-field" required><br>
+                <label for="key">Key:</label><br>
+                <input type="text" id="key" name="key" class="input-field" required><br><br>
+                <input type="submit" value="Encrypt" class="submit-button">
+            </form>
+            {% if encrypted_message %}
+            <p class="message">Encrypted Message: {{ encrypted_message }}</p>
+            {% endif %}
+            <hr>
+            <form action="/decrypt" method="post" class="form">
+                <h2 class="section-heading">Decrypt</h2>
+                <label for="encrypted_message">Encrypted Message:</label><br>
+                <input type="text" id="encrypted_message" name="message" class="input-field" required><br>
+                <label for="decryption_key">Key:</label><br>
+                <input type="text" id="decryption_key" name="key" class="input-field" required><br><br>
+                <input type="submit" value="Decrypt" class="submit-button">
+            </form>
+            {% if decrypted_message %}
+            <p class="message">Decrypted Message: {{ decrypted_message }}</p>
+            {% endif %}
+        </div>
+    </div>
+</body>
+</html>
